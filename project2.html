@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Showroom</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <header>
+        <h1><center>Welcome to Our Car Showroom</center></h1>
+    </header>
+    <div class="car-list">
+        <div class="car"> 
+            <img src="C:\Users\arumu\Downloads\Audi.png" height="300" width="400" " alt="Audi">
+            <h2>Car Model 1</h2>
+            <p>Price: $30,000 <br> <h3>Audi SQ8</h3></p>
+            <button class="buy-button" onclick="buyCar('Car Audi SQ8', 30000)">Buy Now</button>
+        </div>
+        <div class="car">
+            <img src="C:\Users\arumu\Downloads\Benz.png" height="300" width="400" " alt="Benz">
+            <h2>Car Model 2</h2>
+            <p>Price: $40,000 <br> <h3>Mercedes Benz A class Limosine</h3></p>
+            <button class="buy-button" onclick="buyCar('Car Mercedes Benz class A', 40000)">Buy Now</button>
+        </div>
+        <!-- Add more car listings here -->
+    </div>
+    <script>
+        function buyCar(carModel, price) {
+            // Open a new page for the purchase
+            const purchasePage = window.open('', '_blank');
+            
+            // Write content to the new page
+            purchasePage.document.write(`
+                <html>
+                <head>
+                    <title>Car Purchase</title>
+                </head>
+                <body>
+                    <h1><center>Car Purchase Details</center></h1>
+                    <p><h3><center>You are about to purchase ${carModel} for $${price}.</center></h3></p>
+                    <p><h2><center>Fill in your payment details and complete the purchase successfully.</h2></p>
+                    <!-- Add a form for payment details here -->
+                </body>
+                </html>
+            `);
+            
+            // You can also add styling or more content to the purchase page
+            // purchasePage.document.write(`<link rel="stylesheet" href="purchase_styles.css">`);
+        }
+    </script>
+</body>
+</html>
